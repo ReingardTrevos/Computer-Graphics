@@ -26,11 +26,7 @@ void tri(float r, float g, float b, float f) {
 }
 
 void pos() {
-	//jedna grupa sa zielony i pomaranczowy
-	//a druga fioletowy niebieski  zolty i rozowy
-	//czerwony
-	//zielony   zolty
-	//niebieski pomaranczowy rozowy
+
 	glPushMatrix();
 	glPushMatrix();
 	glPushMatrix();
