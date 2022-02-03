@@ -1,18 +1,20 @@
-// Template1.cpp : Defines the entry point for the console application.
-//
+
 
 #include "stdafx.h"
 #include <Windows.h>
 #include "include\GL\GL.H"
 #include "include\GL\GLU.H"
 #include "include\GL\glut.h"
+#include "include\GLFW\glfw3.h"
+
+
 
 float rAngle = 0.0;
 float rHeight = 0.0;
 int rSwitch = 0;
 
 void tri(float r, float g, float b, float f) {
-	glBegin(GL_TRIANGLES);// OpenGL’a state
+	glBegin(GL_TRIANGLES);
 	glColor4f(r, g, b, f);
 	glVertex2f(0.0f, 0.0f);
 	glColor4f(r, g, b, f);
@@ -42,20 +44,20 @@ void pos() {
 	glTranslatef(17, 17, 0);
 	glRotatef(2 * rAngle, 0.0f, 0.0f, 1.0f);
 	glTranslatef(-17, -17, 0);
-	tri(0.0, 0.0, 1.0, 0.0);//niebieski
+	tri(0.0, 0.0, 1.0, 0.0);//blue
 
 
 
 
 	glPopMatrix();
-	glRotatef(-rAngle, 0.0f, 0.0f, 1.0f);// jak sie ma obracac
+	glRotatef(-rAngle, 0.0f, 0.0f, 1.0f);// how shouled it spin
 	glTranslatef(0.17*rHeight, 0, 0);
 	glTranslatef(0, 0.67*rHeight, 0);
-	glTranslatef(50, 0, 0); //gdzie chcesz go narysowac
+	glTranslatef(50, 0, 0); //where you want to draw it
 	glTranslatef(17, 17, 0);
 	glRotatef(-2 * rAngle, 0.0f, 0.0f, 1.0f);
 	glTranslatef(-17, -17, 0);
-	tri(1.0, 0.5, 0.0, 0.0);//pomaranczowy
+	tri(1.0, 0.5, 0.0, 0.0);//orange
 
 
 
@@ -67,7 +69,7 @@ void pos() {
 	glTranslatef(17, 17, 0);
 	glRotatef(2 * rAngle, 0.0f, 0.0f, 1.0f);
 	glTranslatef(-17, -17, 0);
-	tri(1.0, 0.0, 1.0, 0.0);//fiolet
+	tri(1.0, 0.0, 1.0, 0.0);//violet
 
 	glPopMatrix();
 	glRotatef(rAngle, 0.0f, 0.0f, 1.0f);
@@ -77,7 +79,7 @@ void pos() {
 	glTranslatef(17, 17, 0);
 	glRotatef(2 * rAngle, 0.0f, 0.0f, 1.0f);
 	glTranslatef(-17, -17, 0);
-	tri(1.0, 1.0, 0.0, 0.0);//zolty
+	tri(1.0, 1.0, 0.0, 0.0);//yellow
 
 
 	glPopMatrix();
@@ -88,7 +90,7 @@ void pos() {
 	glTranslatef(17, 17, 0);
 	glRotatef(-2 * rAngle, 0.0f, 0.0f, 1.0f);
 	glTranslatef(-17, -17, 0);
-	tri(0.0, 1.0, 0.0, 0.0);//zielony
+	tri(0.0, 1.0, 0.0, 0.0);//green
 
 	glPopMatrix();
 	glRotatef(rAngle, 0.0f, 0.0f, 1.0f);
@@ -98,7 +100,7 @@ void pos() {
 	glTranslatef(17, 17, 0);
 	glRotatef(2 * rAngle, 0.0f, 0.0f, 1.0f);
 	glTranslatef(-17, -17, 0);
-	tri(1.0, 0.0, 0.0, 0.0);//czerwony
+	tri(1.0, 0.0, 0.0, 0.0);//red
 
 
 	glPopMatrix();
@@ -114,18 +116,18 @@ void MyDisplay(void) {
 	pos();
 
 
-	//druga cwiartka
+	//second quater
 	glRotated(90.0, 0.0, 0.0, 1.0);
 
 	pos();
 
 
-	//trzecia cwiartka
+	//third quater
 	glRotated(180.0, 0.0, 0.0, 1.0);
 
 	pos();
 
-	//czwarta cwiartka
+	//fourth quater
 	glRotated(270.0, 0.0, 0.0, 1.0);
 
 	pos();
